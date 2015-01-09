@@ -38,7 +38,8 @@
                                    'multi-web-mode
                                    'nlinum
                                    'osx-clipboard
-                                   'ps-ccrypt)
+                                   'ps-ccrypt
+                                   'evil)
 
     ;;
     ;; center the frame on the screen
@@ -74,7 +75,9 @@
     ;; customizations I want everywhere
     (menu-bar-mode 1)
     (color-theme-initialize)
-    (color-theme-snow)
+    (if (window-system)
+        (color-theme-snow)
+      (color-theme-comidia))
     (setq ring-bell-function 'ignore)
     (cua-mode)
     (global-company-mode 1)
